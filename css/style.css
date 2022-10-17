@@ -193,3 +193,8 @@ h6 {
 .h70vh {
     height: 70vh;
 }
+
+.round.mx-md-5 {
+    display: flex;
+    align-items: center;
+}
