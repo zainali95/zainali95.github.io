@@ -77,10 +77,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 categories.push(fields);
                 fields = fields.join(', ');
 
-                cover = `<div class='col-md-4 ` + fields + ` text-center'>
-                                    <a href=" + data.projects[i].url + ">
-                                        <img src=` + element.covers['404'] + ` class='img-fluid' >
-                                        <p class='my-3'>` + name + `</p>
+                cover = `<div class='col-md-4 ${fields} text-center'>
+                                    <a href="${ data.projects[index].url}">
+                                        <img src="${ element.covers['404']}" class='img-fluid' >
+                                        <p class='my-3'>${name} </p>
                                     </a>
                             </div>`;
                 cover = $(cover);
