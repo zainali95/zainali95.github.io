@@ -138,8 +138,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // $('.filter').on('click', function(event) {
-    //    
-    // });
 
 });
