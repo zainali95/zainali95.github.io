@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Zain Ali  </title>
-    <!-- Bootstrap CSS -->
+    <title>Zain Ali </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap4.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
 </head>
 
@@ -18,10 +14,11 @@
     <nav class="fixed top-0 w-full z-10">
         <div class="flex items-center justify-between p-2 px-4">
             <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
-            <button class="navbar-toggler md:hidden" type="button" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler md:hidden" type="button" aria-controls="navbarsExample03"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        
+
             <div class=" hidden md:flex md:items-center md:justify-end" id="navbarsExample03">
                 <ul class="navbar-nav flex flex-col md:flex-row md:space-x-4 text-white">
                     <li class="nav-item">
@@ -49,326 +46,259 @@
             </div>
         </div>
     </nav>
-    
+
     <main>
         <section id="home">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12   text-center text-white">
-                        <div class="home-text ">
-                            <h1>Computer Scientist </h1>
-                            <h2>With Creative Instinct</h2>
-                            <a class="btn btn-outline-light my-4" href="https://bit.ly/zainali-Resume">Download Resume
-                            </a>
-                            <a class="btn btn-outline-light my-4" href="https://bit.ly/zainali-cv">Download CV </a>
+            <div class="container mx-auto">
+                <div class="flex justify-center">
+                    <div class="w-full text-center text-white">
+                        <div class="home-text">
+                            <h1 class="text-4xl font-bold">Computer Scientist</h1>
+                            <h2 class="text-2xl mt-2">With Creative Instinct</h2>
+                            <div class="my-4">
+                                <a class=" border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300" href="https://bit.ly/zainali-Resume">Download Resume</a>
+                            <a class=" border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300" href="https://bit.ly/zainali-cv">Download CV</a>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section>        
         <section id="about">
-            <div class="container mt-5">
-                <div class="row mt-5">
-                    <div class="col-md-6 col-lg-7 p-5">
-                        <h1 class="mt-5">About</h1>
-                        <p>
-                            I'm Web Craftsmen with 3+ years of experience in designing and coding custom websites from
-                            scratch. Possessing considerable knowledge HTML5 / CSS3 / JavaScript / PHP / AWS / Shopify.
+            <div class="container mx-auto mt-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 mt-20">
+                    <div class="col-span-1 md:col-span-1 lg:col-span-7 p-5">
+                        <h1 class="mt-20 text-4xl font-bold">About</h1>
+                        <p class="mt-4 text-lg">
+                            I'm a Web Craftsman with 3+ years of experience in designing and coding custom websites from
+                            scratch. Possessing considerable knowledge of HTML5 / CSS3 / JavaScript / PHP / AWS / Shopify.
                             Experienced in developing high-end web applications and keen coding skills, having the
-                            enthusiasm and ambition to complete projects to the highest standards
+                            enthusiasm and ambition to complete projects to the highest standards.
                         </p>
-
                     </div>
-                    <div class="col-md-6 col-lg-4 mt-5 mt-sm-5">
-                        <img src="img/Zain-ali.jpg" class="zainimg" alt="">
+                    <div class="col-span-1 md:col-span-1 lg:col-span-5 mt-20 sm:mt-20">
+                        <img src="img/Zain-ali.jpg" class="w-full h-auto" alt="Zain Ali">
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="services">
-            <div class="container-fluid mt-lg-5">
-                <div class="row py-3 mt-lg-5">
-                    <div class="col-md-12 mt-5">
-                        <h1 class="text-center mt-4 text-white">
-                            What I Can do?
-                        </h1>
+        </section>        
+        <section id="services" class="py-14">
+            <div class="container mx-auto">
+                <h1 class="text-center text-4xl font-bold text-white mb-8">What can I do?</h1>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center mb-8">
+                        <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
+                            <img src="./img/problem-solving.svg" alt="problem solving" class="w-12 h-12" />
+                        </div>
+                        <p class="text-white">Problem <br/> Solving</p>
                     </div>
-                    <div class="mt-5">
-
+                    <div class="text-center mb-8">
+                        <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
+                            <img src="./img/brand-design.svg" alt="brand design" class="w-12 h-12" />
+                        </div>
+                        <p class="text-white">Brand <br/> Design</p>
                     </div>
-                    <div class="row my-5 mx-auto">
-                        <div class="col-md-3 ">
-                            <div class="round   mx-md-5  ">
-                                <div class="icon ">
-                                    <i class="fa fa-lightbulb mt-lg-2 text-center"></i>
-                                </div>
-                            </div>
-                            <p class="text-white mx-3 mt-3   text-center">Problem <br> Solving</p>
+                    <div class="text-center mb-8">
+                        <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
+                            <img src="./img/ui-ux-design.svg" alt="ui-ux design" class="w-12 h-12" />
                         </div>
-                        <div class="col-md-3  ">
-                            <div class="round  mx-md-5 ">
-                                <div class="icon ">
-                                    <i class="fa fa-id-badge mt-lg-2 text-center"></i>
-
-                                </div>
-
-                            </div>
-                            <p class="text-white mx-3 mt-3   text-center">Brand <br> Design</p>
+                        <p class="text-white">UI/UX <br/> Design</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
+                            <img src="./img/website-development.svg" alt="website development" class="w-12 h-12" />
                         </div>
-                        <div class="col-md-3  ">
-                            <div class="round  mx-md-5 -sm-auto">
-                                <div class="icon ">
-                                    <i class="fa fa-object-group mt-lg-2   text-center"></i>
-
-                                </div>
-                            </div>
-                            <p class="text-white mx-3 mt-3   text-center">Ui/Ux <br> Design</p>
-                        </div>
-                        <div class="col-md-3  ">
-                            <div class="round  mx-md-5 ">
-                                <div class="icon ">
-                                    <i class="fa fa-globe mt-lg-2  text-center"></i>
-
-                                </div>
-                            </div>
-                            <p class="text-white mx-3 mt-3   text-center">Website <br> Development</p>
-                        </div>
+                        <p class="text-white">Website <br/>Development</p>
                     </div>
                 </div>
             </div>
         </section>
         <section id="experience">
-            <div class="container py-3 pb-5">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="text-center mt-4 ">
-                            Experience
-                        </h1>
+            <div class="container py-3 pb-5 mx-auto">
+                
+                    <div class="text-center mt-4">
+                        <h1 class="text-2xl md:text-4xl">Experience</h1>
                     </div>
-                    <div class="card col-md-10 bg-light p-0 mx-auto mt-5">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <img src="img/aiva.jpg">
+                    <div class="mt-5 mx-auto">
+                        <div class="bg-gray-100 border shadow-md">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <img class="w-1/2" src="img/aiva.jpg" alt="Usman Institute of Technology" />
+                                </div>
+                                <div class="ml-4 py-8 pl-8">
+                                    
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">AIVA LABS</h3>
+                                    <p class="mt-2 text-sm text-gray-500">Shopify Developer</p>
+                                </div>
                             </div>
-                            <div class="col-md-8 px-3">
-                                <div class="card-block p-4">
-                                    <h4 class="card-title">Aiva labs</h4>
-                                    <p class="card-text"> Shopify Developer</p>
+                        </div>
+                        <div class="mt-4 bg-gray-100 border shadow-md w-11/12 mx-auto">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <img class="w-1/2 grayscale" src="img/kidsway.jpg" alt="">
+                                </div>
+                                <div class="ml-4 py-8 pl-8">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">KIDSWAY</h3>
+                                    <p class="mt-2 text-sm text-gray-500">Front-end Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-gray-100 border shadow-md w-11/12 mx-auto">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <img class="w-1/2 grayscale" src="img/homeshopping.jpg" alt="">
+                                </div>
+                                <div class="ml-4 py-8 pl-8">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">HOMESHOPPING.PK</h3>
+                                    <p class="mt-2 text-sm text-gray-500">Front-end Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-gray-100 border shadow-md w-11/12 mx-auto">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <img class="w-1/2 grayscale" src="img/blue-ex-logo.jpg" alt="">
+                                </div>
+                                <div class="ml-4 py-8 pl-8">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">BLUE-EX</h3>
+                                    <p class="mt-2 text-sm text-gray-500">PHP Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-gray-100 border shadow-md w-11/12 mx-auto">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <img class="w-1/2 grayscale" src="img/fe-logo.jpg" alt="">
+                                </div>
+                                <div class="ml-4 py-8 pl-8">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">FOSTER ENTITE</h3>
+                                    <p class="mt-2 text-sm text-gray-500">PHP Developer</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card col-md-9 bg-light p-0 mx-auto mt-2">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <img src="img/kidsway.jpg">
-                            </div>
-                            <div class="col-md-8 px-3">
-                                <div class="card-block p-4">
-                                    <h4 class="card-title">Kidsway</h4>
-                                    <p class="card-text"> Front-end Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-9 bg-light p-0 mx-auto mt-2">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <img src="img/homeshopping.jpg">
-                            </div>
-                            <div class="col-md-8 px-3">
-                                <div class="card-block p-4">
-                                    <h4 class="card-title">Homeshopping.pk</h4>
-                                    <p class="card-text"> Front-end Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-9 bg-light p-0 mx-auto mt-2">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <img src="img/blue-ex-logo.jpg">
-                            </div>
-                            <div class="col-md-8 px-3">
-                                <div class="card-block p-4">
-                                    <h4 class="card-title">blue-EX</h4>
-                                    <p class="card-text"> PHP Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card col-md-9 p-0 bg-light mx-auto mt-2">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <img src="img/fe-logo.jpg">
-                            </div>
-                            <div class="col-md-8 px-3">
-                                <div class="card-block p-4">
-                                    <h4 class="card-title">Foster Entite</h4>
-                                    <p class="card-text">Front-end Developer</p>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+               
             </div>
         </section>
         <section id="skills">
-            <div class="container py-3">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="text-center mt-4 text-white">
+            <div class="container py-3 mx-auto text-center">
+                <div class="row grid-cols-1 mx-auto">
+                    <div class="col-span-1 text-center text-white">
+                        <h1 class="mt-4">
                             Skills
                         </h1>
                     </div>
-                    <div class="col-md-5 m-auto text-center">
-                        <div class="my-5">
-                            <div class="btn btn-outline-light mt-2">Photoshop</div>
-                            <div class="btn btn-outline-light mt-2">Illustrator</div>
-                            <div class="btn btn-outline-light mt-2">Figma</div>
-                            <div class="btn btn-outline-light mt-2">AWS</div>
-                            <div class="btn btn-outline-light mt-2">Python</div>
-                            <div class="btn btn-outline-light mt-2">PHP</div>
-                            <div class="btn btn-outline-light mt-2">Wordpress</div>
-                            <div class="btn btn-outline-light mt-2">Shopify</div>
-                            <div class="btn btn-outline-light mt-2">C#</div>
-                            <div class="btn btn-outline-light mt-2">Html</div>
-                            <div class="btn btn-outline-light mt-2">CSS</div>
-                            <div class="btn btn-outline-light mt-2">SCSS</div>
-                            <div class="btn btn-outline-light mt-2">React</div>
-                            <div class="btn btn-outline-light mt-2">Angular</div>
-                            <div class="btn btn-outline-light mt-2">Git</div>
-                            <div class="btn btn-outline-light mt-2">Javascript</div>
-                            <div class="btn btn-outline-light mt-2">jQuery</div>
-                        </div>
+                    <div class="my-5 w-80 mx-auto text-white flex flex-wrap justify-center gap-1        ">
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">PhotoShop</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">Illustrator</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">Figma</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">AWS</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">Python</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">PHP</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">Wordpress</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">Shopify</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">C#</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">Html</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">CSS</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">SCSS</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">React</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">Angular</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">Git</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">Javascript</div>
+                        <div class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-gray-100 hover:text-gray-900 p-3">jQuery</div>
                     </div>
+                    
 
                 </div>
             </div>
         </section>
         <section id="education">
-            <div class="container py-3 pb-5">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="text-center mt-4 ">
-                            Education
-                        </h1>
-                    </div>
-                    <div class="card col-md-10 bg-light p-0 mx-auto mt-5">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <img src="img/uit-logo.jpg" height="200" width="200">
+            <div class="container py-3 pb-5 mx-auto">
+                <div class="text-center mt-4">
+                    <h1 class="text-2xl md:text-4xl">Education</h1>
+                </div>
+                <div class="mt-5 mx-auto">
+                    <div class="bg-gray-100 border shadow-md">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <img class="w-1/2" src="img/uit-logo.jpg" alt="Usman Institute of Technology" />
                             </div>
-                            <div class="col-md-8 px-3">
-                                <div class="card-block p-4">
-                                    <h4 class="card-title">Usman institute of Technology </h4>
-                                    <p class="card-text">
-                                        Bachelors in Computer Science <br> 2014 - 2018
-                                    </p>
-
-                                </div>
+                            <div class="ml-4 py-8 pl-8">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">Usman institute of Technology</h3>
+                                <p class="mt-2 text-sm text-gray-500">Bachelors in Computer Science <br> 2014 - 2018</p>
                             </div>
                         </div>
                     </div>
-                    <div class="card col-md-9 p-0 bg-light mx-auto mt-2">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <img src="img/nazimabad-formen-logo.jpg" height="190px">
+                    <div class="mt-4 bg-gray-100 border shadow-md w-11/12 mx-auto">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <img class="w-1/2 grayscale" src="img/nazimabad-formen-logo.jpg" alt="">
                             </div>
-                            <div class="col-md-8 px-3">
-                                <div class="card-block p-4">
-                                    <h4 class="card-title">For Men Collage Nazimabad</h4>
-                                    <p class="card-text">Pre Engineering
-                                        <br> 2013 - 2014
-                                    </p>
-
-
-                                </div>
+                            <div class="ml-4 py-8 pl-8">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">For Men Collage Nazimabad</h3>
+                                <p class="mt-2 text-sm text-gray-500">Pre Engineering <br> 2013 - 2014</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
         <section id="portfolio">
-            <div class="container py-3 pb-5">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="text-center mt-4 ">
-                            Portfolio
-                        </h1>
-                    </div>
-                    <div class="col-md-7 px-5 mx-auto mb-5 text-center filters ">
-                    </div>
-                </div>
-                <div id="portfolio-wrapper" class="row images">
-                </div>
-            </div>
+            <portfolio-component></portfolio-component>
         </section>
-        <section id="contact">
-            <div class="container py-3 pb-5">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="text-center mt-4 text-white ">
-                            Contact
-                        </h1>
-                    </div>
+        <section id="contact" class="bg-white py-4 md:py-8">
+            <div class="container mx-auto">
+                <div class="flex justify-center items-center">
+                    <h1 class="text-2xl md:text-4xl font-bold text-white">
+                        Contact
+                    </h1>
+                </div>
 
-                    <div class="col-md-6 mx-auto my-4">
-                        <form action="https://formspree.io/zainali95@yahoo.com" method="POST">
-                            <input type="text" class="form-control mb-1" placeholder="name" name="name" required />
-                            <input type="email" class="form-control" placeholder="email" name="_replyto" required />
-                            <textarea name="message" id="" cols="30" rows="10" class="form-text form-control " required
-                                placeholder="message"></textarea>
-                            <input type="submit" class="btn btn-primary form-control" value="SEND">
-                        </form>
-                    </div>
+                <div class="mt-12 max-w-lg mx-auto">
+                    <form action="https://formspree.io/zainali95@yahoo.com" method="POST" class="flex flex-col">
+                        <input type="text" placeholder="Name" name="name" class="px-3 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-indigo-500" required/>
+                        <input type="email" placeholder="Email" name="_replyto" class="px-3 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-indigo-500" required/>
+                        <textarea name="message" placeholder="Message" id="" cols="30" rows="10" class="mt-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-indigo-500" required></textarea>
+                        <button type="submit" class="mt-4 px-4 py-2 bg-indigo-500 text-white rounded-md shadow-md hover:bg-indigo-600">Send</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
     <footer>
         <div class="first-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-white mx-auto py-3 text-center ">
-                        <a href="https://www.github.com/zainali95/" class="text-white"><i
-                                class="fab fa-github fa-3x px-2"></i></a>
-                        <a href="https://www.fb.com/zainalidesigns/" class="text-white"><i
-                                class="fab fa-facebook-f fa-3x px-2"></i></a>
-                        <a href="https://www.linkedin.com/in/zainali95/" class="text-white"><i
-                                class="fab fa-linkedin-in fa-3x px-2"></i></a>
-                        <a href="https://www.behance.net/zainalidesigns" class="text-white"><i
-                                class="fab fa-behance fa-3x px-2"></i></a>
-                        <a href="https://stackoverflow.com/users/4198115/zain-ali" class="text-white"><i
-                                class="fab fa-stack-overflow fa-3x px-2"></i></a>
-                        <a href="https://api.whatsapp.com/send?phone=923473587116" class="text-white"><i
-                                class="fab fa-whatsapp fa-3x px-2"></i></a>
-                    </div>
+            <div class="container mx-auto">
+                <div class="flex justify-center py-3 text-center">
+                    <a href="https://www.github.com/zainali95/" class="text-white mx-2 text-center">
+                        <img class="w-8 h-8" src="./img/github.svg" alt="github" />
+                    </a>
+                    <a href="https://www.fb.com/zainalidesigns/" class="text-white mx-2">
+                        <img class="w-8 h8" src="./img/facebook.svg" alt="facebook" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/zainali95/" class="text-white mx-2">
+                        <img class="w-8 h8" src="./img/linkedin.svg" alt="linkedin">
+                    </a>
+                    <a href="https://www.behance.net/zainalidesigns" class="text-white mx-2">
+                        <img class="w-8 h8" src="./img/behance.svg" alt="behance" />
+                    </a>
+                    <a href="https://stackoverflow.com/users/4198115/zain-ali" class="text-white mx-2">
+                        <img class="w-8 h8" src="./img/stackoverflow.svg" alt="stack overflow" />
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=923473587116" class="text-white mx-2">
+                        <img class="w-8 h8" src="./img/whatsapp.svg" alt="whatsapp" />
+                    </a>
                 </div>
             </div>
         </div>
         <div class="second-footer bg-dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-white mx-auto py-1 text-center">
-                        <p>Made with <i class="fa fa-heart"></i> from <a href="https://goo.gl/maps/m6Ectk7nseH2"
-                                class="text-white">karachi</a></p>
-                    </div>
+            <div class="container mx-auto">
+                <div class="flex justify-center py-1 text-center">
+                    <p class="text-white">Made with ❤ from <a href="https://goo.gl/maps/m6Ectk7nseH2" class="text-white">karachi</a></p>
                 </div>
             </div>
         </div>
     </footer>
 </body>
-<script src="js/plugs.js "></script>
-<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
-    integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
-    crossorigin="anonymous"></script>
-<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 <script src="js/script.js "></script>
-
 </html>

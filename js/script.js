@@ -1,42 +1,20 @@
-function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-}
-var categories = [];
-var unique = [];
-var covers = '';
-var cover = '';
-var fields = [];
-var $container = $('.images');
-window.onload = () => {
-    $container.isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-
-    });
-};
-
 document.addEventListener("DOMContentLoaded", function() {
-    //scrolling nav change
-    document.querySelector(".nav-link").classList.add("active");
+    // Add 'active' class to the first .nav-link
+    document.querySelector(".nav-link").classList.add("active");    
+    // Handle scrolling event
     window.addEventListener('scroll', function() {
-        var nav = $('nav');
+        var nav = document.querySelector('nav');
         var top = 100;
-        var scrolled_val = $(window).scrollTop().valueOf();
+        var scrolled_val = window.scrollY;
         if (scrolled_val < top) {
-            nav.removeClass('bg-primary');
+            nav.classList.remove('bg-primary');
         } else {
-            nav.addClass('bg-primary');
+            nav.classList.add('bg-primary');
         }
     });
-    var navlink = [];
-    navlink.push(...document.getElementsByClassName("nav-link"));
-
-    navlink.forEach(e => {
-
+    // Convert HTMLCollection to array and add click event listeners to .nav-link elements
+    var navLinks = Array.from(document.getElementsByClassName("nav-link"));
+    navLinks.forEach(function(e) {
         e.addEventListener('click', function(event) {
             const active = document.querySelector('.active');
             if (active) {
@@ -50,93 +28,139 @@ document.addEventListener("DOMContentLoaded", function() {
                 event.preventDefault();
                 // Store hash
                 var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                // Smooth page scroll
                 var offset = document.querySelector(hash).offsetTop;
-                $('html, body').animate({
-                    scrollTop: offset
-                }, 800, function() {
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth'
                 });
-            } // End if
+                // Add hash (#) to URL when done scrolling
+                window.location.hash = hash;
+            }
+        });
+    });
+});
+
+
+
+class PortfolioComponent extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    async jsonp(url) {
+        return new Promise((resolve, reject) => {
+            const callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
+            window[callbackName] = resolve;
+
+            const script = document.createElement('script');
+            script.src = url + (url.includes('?') ? '&' : '?') + 'callback=' + callbackName;
+            script.onerror = reject;
+            document.body.appendChild(script);
+        });
+    }
+
+    async fetchProjects() {
+        const data = await this.jsonp("https://api.behance.net/v2/users/zainalidesigns/projects?api_key=NoXD4d6Xe6F4jZpDSiTxkf9NBWwmr2zb");
+        const projectsComponent = this.querySelector('project-component');
+        projectsComponent.setProjects(data);
+        const filtersComponent = this.querySelector('filters-component');
+        filtersComponent.setFilters(data);
+    }
+
+    connectedCallback() {
+        this.innerHTML = `
+            <div class="container py-3 pb-5">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center mt-4">Portfolio</h1>
+                    </div>
+                    <filters-component class="col-md-7 p-5 mx-auto mb-5 text-center filters"></filters-component>
+                </div>
+                
+                <project-component  id="portfolio-wrapper" class="row images" />
+                
+            </div>
+        `;
+        this.fetchProjects();
+    }
+}
+customElements.define('portfolio-component', PortfolioComponent);
+class FiltersComponent extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    setFilters(data) {
+        const categories = [];
+        data.projects.forEach((element, index) => {
+            const fields = element.fields.toString().split(' ').join('-').split('/').join('-').split(',');
+            categories.push(fields);
+        });
+        
+        const uniqueCategories = categories.toString().split(',').filter((value, index, self) => self.indexOf(value) === index);
+
+        uniqueCategories.forEach(e => {
+            const string = e.toString().split('-').join(' ');
+            const node = `<div data-filter='${e}' class='btn btn-outline-primary my-1 mx-1 col-sm-12 col-md-auto filter'>${string}</div>`;
+            this.innerHTML += node;
         });
 
-        //         
-    });
+        const filters = [...this.getElementsByClassName('filter')];
+        filters.forEach(e => {
+            e.addEventListener('click', (event) => {
+                event.preventDefault();
+                var selector = event.target.getAttribute('data-filter');
+                document.querySelector('project-component').filterElements(selector);
 
-    $.get({
-        url: "https://api.behance.net/v2/users/zainalidesigns/projects?api_key=NoXD4d6Xe6F4jZpDSiTxkf9NBWwmr2zb",
-        dataType: 'jsonp',
-        success: (data) => {
-            console.log(data);
-            data.projects.forEach((element, index) => {
-                var name = element.name;
-                fields = element.fields.toString().split(' ').join('-').split('/').join('-').split(',');
-                categories.push(fields);
-                fields = fields.join(', ');
-
-                cover = `<div class='col-md-4 ${fields} text-center'>
-                                    <a href="${ data.projects[index].url}">
-                                        <img src="${ element.covers['404']}" class='img-fluid' >
-                                        <p class='my-3'>${name} </p>
-                                    </a>
-                            </div>`;
-                cover = $(cover);
-
-                $(".images").append(cover);
+                const active = document.querySelector('.btn-primary');
+                if (active) {
+                    active.classList.toggle('btn-outline-primary');
+                    active.classList.toggle('btn-primary');
+                }
+                event.target.classList.toggle('btn-outline-primary');
+                event.target.classList.toggle('btn-primary');
             });
+        });
+    }
+}
+customElements.define('filters-component', FiltersComponent);
+class ProjectsComponent extends HTMLElement {
+    constructor() {
+        super();
+        this.projects = [];
+    }
+    item (project){
+        return `<div class='col-md-4 ${project.fields} text-center'>
+                            <a href="${project.link}">
+                                <img src="${project.image}" class='img-fluid'>
+                                <p class='my-3'>${project.name}</p>
+                            </a>
+                        </div>`;
+    }
+    setProjects(data) {
+        let projectDom  =[];
+        data.projects.forEach((element, index) => {
+            const fields = element.fields.toString().split(' ').join('-')
+                          .split('/').join('-').split(',').join(', ');
+            let project = {
+                name: element.name,
+                link: data.projects[index].url,
+                image: element.covers['404'],
+                fields
+            }
+            
+            this.projects.push(project);
+            projectDom.push( this.item(project));
+        });
+        this.innerHTML = projectDom;
 
-            categories = categories.toString().split(',');
-            var nodes = '';
-            unique = categories.filter(onlyUnique);
-            unique.forEach(e => {
-                const string = e.toString().split('-').join(' ')
-                nodes = `<div data-filter='.` + e + `'  class='btn btn-outline-primary my-1 mx-1 col-sm-12 col-md-auto filter '>` +
-                    string +
-                    `</div>`;
-                $(".filters").append(nodes);
-            });
+    }
 
-
-
-
-        },
-        complete: () => {
-            var filters = [];
-            filters.push(...document.getElementsByClassName('filter'));
-            // console.log(filters);
-            filters.forEach(e => {
-                e.addEventListener('click', (event) => {
-                    event.preventDefault();
-
-                    var selector = $(event.target).attr('data-filter');
-
-                    $container.isotope({
-                        filter: selector,
-                        animationOptions: {
-                            duration: 750,
-                            easing: 'linear',
-                            queue: false
-                        }
-                    });
-                    return false;
-                });
-
-                e.onclick = () => {
-
-                    const active = document.querySelector('.btn-primary');
-                    if (active) {
-                        active.classList.toggle('btn-outline-primary');
-                        active.classList.toggle('btn-primary');
-                    }
-                    event.target.classList.toggle('btn-primary');
-                    event.target.classList.toggle('btn-outline-primary');
-                };
-            });
-        }
-    });
-
-
-});
+    filterElements(selector) {
+       const filteredProjects = this.projects.filter(project => project.fields.includes(selector));
+       let   filterProjectsDom = filteredProjects.map( item => this.item(item), '');
+       this.innerHTML = filterProjectsDom;
+    }
+}
+customElements.define('project-component', ProjectsComponent);
