@@ -1,47 +1,58 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.getElementById('hamburger');
+    const navLink = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+        navLink.classList.toggle('top-[40px]');
+        hamburger.classList.toggle('open');
+    });
+    
     // Add 'active' class to the first .nav-link
     document.querySelector(".nav-link").classList.add("active");    
     // Handle scrolling event
     window.addEventListener('scroll', function() {
-        var nav = document.querySelector('nav');
+        var header = document.querySelector('header');
         var top = 100;
         var scrolled_val = window.scrollY;
         if (scrolled_val < top) {
-            nav.classList.remove('bg-primary');
+            header.classList.remove('bg-primary');
         } else {
-            nav.classList.add('bg-primary');
+            header.classList.add('bg-primary');
         }
     });
     // Convert HTMLCollection to array and add click event listeners to .nav-link elements
     var navLinks = Array.from(document.getElementsByClassName("nav-link"));
-    navLinks.forEach(function(e) {
-        e.addEventListener('click', function(event) {
-            const active = document.querySelector('.active');
-            if (active) {
-                active.classList.remove('active');
-            }
-            this.classList.add('active');
+    navLinks.forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
 
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
-                // Store hash
-                var hash = this.hash;
-                // Smooth page scroll
-                var offset = document.querySelector(hash).offsetTop;
-                window.scrollTo({
-                    top: offset,
+            if (targetElement) {
+                targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
-                // Add hash (#) to URL when done scrolling
-                window.location.hash = hash;
+                
+                // Update the URL hash without jumping
+                history.pushState(null, null, `#${targetId}`);
             }
         });
     });
+
+    // Handle back/forward browser buttons
+    window.addEventListener('popstate', () => {
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+            const targetElement = document.getElementById(hash);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+
+    
 });
-
-
 
 class PortfolioComponent extends HTMLElement {
     constructor() {
@@ -70,15 +81,12 @@ class PortfolioComponent extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-            <div class="container py-3 pb-5">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="text-center mt-4">Portfolio</h1>
-                    </div>
-                    <filters-component class="col-md-7 p-5 mx-auto mb-5 text-center filters"></filters-component>
+            <div class="container py-3 pb-5 mx-auto">
+                <div class="text-center mt-4">
+                    <h1 class="text-2xl md:text-4xl">Portfolio</h1>
                 </div>
-                
-                <project-component  id="portfolio-wrapper" class="row images" />
+                <filters-component class="filters justify-center text-center cursor-pointer flex flex-wrap my-4 gap-3 w-11/12 mx-auto "></filters-component>
+                <project-component  id="portfolio-wrapper" class="justify-items-center text-center grid grid-cols-1 md:grid-cols-3 images gap-5" />
                 
             </div>
         `;
@@ -86,6 +94,7 @@ class PortfolioComponent extends HTMLElement {
     }
 }
 customElements.define('portfolio-component', PortfolioComponent);
+
 class FiltersComponent extends HTMLElement {
     constructor() {
         super();
@@ -93,7 +102,7 @@ class FiltersComponent extends HTMLElement {
 
     setFilters(data) {
         const categories = [];
-        data.projects.forEach((element, index) => {
+        data.projects.forEach((element) => {
             const fields = element.fields.toString().split(' ').join('-').split('/').join('-').split(',');
             categories.push(fields);
         });
@@ -102,7 +111,7 @@ class FiltersComponent extends HTMLElement {
 
         uniqueCategories.forEach(e => {
             const string = e.toString().split('-').join(' ');
-            const node = `<div data-filter='${e}' class='btn btn-outline-primary my-1 mx-1 col-sm-12 col-md-auto filter'>${string}</div>`;
+            const node = `<div data-filter='${e}' class="border border-primary rounded-md text-primary cursor-pointer hover:bg-primary hover:text-white p-3 filter" >${string}</div>`;
             this.innerHTML += node;
         });
 
@@ -113,25 +122,26 @@ class FiltersComponent extends HTMLElement {
                 var selector = event.target.getAttribute('data-filter');
                 document.querySelector('project-component').filterElements(selector);
 
-                const active = document.querySelector('.btn-primary');
+                const active = e.querySelector('filters-component .bg-primary');
                 if (active) {
-                    active.classList.toggle('btn-outline-primary');
-                    active.classList.toggle('btn-primary');
+                    active.classList.toggle('bg-primary');
+                    active.classList.toggle('text-primary');
                 }
-                event.target.classList.toggle('btn-outline-primary');
-                event.target.classList.toggle('btn-primary');
+                event.target.classList.toggle('text-primary');
+                event.target.classList.toggle('bg-primary');
             });
         });
     }
 }
 customElements.define('filters-component', FiltersComponent);
-class ProjectsComponent extends HTMLElement {
+
+class ProjectComponent extends HTMLElement {
     constructor() {
         super();
         this.projects = [];
     }
     item (project){
-        return `<div class='col-md-4 ${project.fields} text-center'>
+        return `<div class=' text-center'>
                             <a href="${project.link}">
                                 <img src="${project.image}" class='img-fluid'>
                                 <p class='my-3'>${project.name}</p>
@@ -153,14 +163,14 @@ class ProjectsComponent extends HTMLElement {
             this.projects.push(project);
             projectDom.push( this.item(project));
         });
-        this.innerHTML = projectDom;
+        this.innerHTML = projectDom.join(' ');
 
     }
 
     filterElements(selector) {
        const filteredProjects = this.projects.filter(project => project.fields.includes(selector));
-       let   filterProjectsDom = filteredProjects.map( item => this.item(item), '');
+       let   filterProjectsDom = filteredProjects.map( item => this.item(item), '').join(' ');
        this.innerHTML = filterProjectsDom;
     }
 }
-customElements.define('project-component', ProjectsComponent);
+customElements.define('project-component', ProjectComponent);
