@@ -1,367 +1,382 @@
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Zain Ali </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": '#047CEA',
-                        "secondary": '#047CEA',
-                        "tertiary": '#1796E5',
-                        "light-gray":'#F2F2F2'
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Zain Ali </title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            "primary": '#047CEA',
+                            "secondary": '#047CEA',
+                            "tertiary": '#1796E5',
+                            "light-gray": '#F2F2F2'
+                        }
                     }
                 }
             }
-        }
-    </script>
-</head>
+        </script>
+    </head>
+    <body>
+        <header class="fixed top-0 w-full z-10 bg-primary md:bg-transparent">
+            <nav class="flex justify-between md:justify-start items-center w-[92%] z-10  mx-auto">
+                <a class="nav-link" href="#">
+                    <img class="py-2 cursor-pointer bg-primary md:bg-transparent z-10 relative " src="img/logo.png"
+                        alt="zain ali">
+                </a>
+                <div
+                    class="nav-links duration-500 md:static absolute  md:min-h-fit min-h-[60vh] ml-auto top-[-60vh] md:w-auto left-0 w-full flex items-center z-6 ">
+                    <ul
+                        class="flex md:flex-row w-full p-8 md:p-4 flex-col md:items-center md:gap-4 gap-8 bg-primary md:bg-transparent">
 
-<body>
-    <header class="fixed top-0 w-full z-10">
-        <nav class="flex justify-between md:justify-start items-center w-[92%] z-10  mx-auto">
-            <a href="#">
-                <img class="py-2 cursor-pointer bg-primary md:bg-transparent z-10 relative " src="img/logo.png"
-                    alt="zain ali">
-            </a>
-            <div
-                class="nav-links duration-500 md:static absolute  md:min-h-fit min-h-[60vh] ml-auto top-[-500%] md:w-auto left-0 w-full flex items-center z-6 ">
-                <ul
-                    class="flex md:flex-row w-full p-8 md:p-4 flex-col md:items-center md:gap-4 gap-8 bg-primary md:bg-transparent">
+                        <li>
+                            <a class="nav-link text-white" href="#about">About</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white" href="#education">Education</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white" href="#skills">Skills</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white" href="#experience">Experience</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-white" href="#portfolio">Portfolio</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-end gap-4">
+                    <a href="#contact"
+                        class="z-10 relative nav-link bg-[#a6c1ee] text-white md:px-5 p-2  rounded-full hover:bg-[#87acec] ">Contact
+                        me</a>
 
-                    <li>
-                        <a class="nav-link text-white" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="nav-link text-white" href="#education">Education</a>
-                    </li>
-                    <li>
-                        <a class="nav-link text-white" href="#skills">Skills</a>
-                    </li>
-                    <li>
-                        <a class="nav-link text-white" href="#experience">Experience</a>
-                    </li>
-                    <li>
-                        <a class="nav-link text-white" href="#portfolio">Portfolio</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex items-center justify-end gap-6">
-                <a href="#contact"
-                    class="z-10 relative nav-link bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]">Contact
-                    me</a>
+                    <div class="relative  md:hidden">
+                        <div class="cursor-pointer w-8 h-6 flex flex-col justify-between items-center" id="hamburger">
+                            <div class="w-full h-1 bg-white rounded line"></div>
+                            <div class="w-full h-1 bg-white rounded line"></div>
+                            <div class="w-full h-1 bg-white rounded line"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </header>
+        <main>
+            <section id="home">
+                <div class="container mx-auto">
+                    <div class="flex justify-center">
+                        <div class="w-full text-center text-white">
+                            <div class="home-text py-[38vh] p-4" >
+                                <h1 class="text-4xl font-bold">Computer Scientist</h1>
+                                <h2 class="text-2xl mt-2">With Creative Instinct</h2>
+                                <div class="my-4 flex flex-col md:flex-row gap-4 justify-center">
+                                    <a class=" border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300"
+                                        href="https://bit.ly/zainali-Resume">Download Resume</a>
+                                    <a class=" border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300"
+                                        href="https://bit.ly/zainali-cv">Download CV</a>
+                                </div>
 
-                <div class="relative  md:hidden">
-                    <div class="cursor-pointer w-8 h-6 flex flex-col justify-between items-center" id="hamburger">
-                        <div class="w-full h-1 bg-white rounded line"></div>
-                        <div class="w-full h-1 bg-white rounded line"></div>
-                        <div class="w-full h-1 bg-white rounded line"></div>
-                    </div>
-                </div>
-            </div>
-            </div>
-    </header>
-    <main>
-        <section id="home">
-            <div class="container mx-auto">
-                <div class="flex justify-center">
-                    <div class="w-full text-center text-white">
-                        <div class="home-text">
-                            <h1 class="text-4xl font-bold">Computer Scientist</h1>
-                            <h2 class="text-2xl mt-2">With Creative Instinct</h2>
-                            <div class="my-4">
-                                <a class=" border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300"
-                                    href="https://bit.ly/zainali-Resume">Download Resume</a>
-                                <a class=" border border-white text-white py-2 px-4 rounded hover:bg-white hover:text-black transition-colors duration-300"
-                                    href="https://bit.ly/zainali-cv">Download CV</a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="about">
-            <div class="container mx-auto mt-20">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 mt-20">
-                    <div class="col-span-1 md:col-span-1 lg:col-span-7 p-5">
-                        <h1 class="mt-20 text-4xl font-bold">About</h1>
-                        <p class="mt-4 text-lg">
-                            I'm a Web Craftsman with 5+ years of experience in designing and coding custom websites from
-                            scratch. Possessing considerable knowledge of HTML5 / CSS3 / JavaScript / PHP / AWS /
-                            Shopify.
-                            Experienced in developing high-end web applications and keen coding skills, having the
-                            enthusiasm and ambition to complete projects to the highest standards.
-                        </p>
-                    </div>
-                    <div class="col-span-1 md:col-span-1 lg:col-span-5 mt-20 sm:mt-20">
-                        <img src="img/Zain-ali.jpg" class="w-full h-auto" alt="Zain Ali">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="services" >
-            <div class="container mx-auto py-20">
-                <h1 class="text-center text-4xl font-bold text-white mb-8">What can I do?</h1>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 ">
-                    <div class="text-center mb-8">
-                        <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
-                            <img src="./img/problem-solving.svg" alt="problem solving" class="w-12 h-12" />
-                        </div>
-                        <p class="text-white">Problem <br /> Solving</p>
-                    </div>
-                    <div class="text-center mb-8">
-                        <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
-                            <img src="./img/brand-design.svg" alt="brand design" class="w-12 h-12" />
-                        </div>
-                        <p class="text-white">Brand <br /> Design</p>
-                    </div>
-                    <div class="text-center mb-8">
-                        <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
-                            <img src="./img/ui-ux-design.svg" alt="ui-ux design" class="w-12 h-12" />
-                        </div>
-                        <p class="text-white">UI/UX <br /> Design</p>
-                    </div>
-                    <div class="text-center mb-8">
-                        <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
-                            <img src="./img/website-development.svg" alt="website development" class="w-12 h-12" />
-                        </div>
-                        <p class="text-white">Website <br />Development</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="experience">
-            <div class="max-w-3xl py-3 pb-5 mx-auto">
-                <div class="text-center mt-4">
-                    <h1 class="text-2xl md:text-4xl">Experience</h1>
-                </div>
-                <div class="mt-5 mx-auto">
-                    <div class="bg-light-gray border shadow-md w-90 mx-2">
-                        <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
-                            <div class="flex-shrink-0">
-                                <img src="img/aiva.jpg" alt="Usman Institute of Technology" />
-                            </div>
-                            <div class="py-8 md:pl-8">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">AIVA LABS</h3>
-                                <p class="mt-2 text-sm text-gray-500">Shopify Developer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 bg-light-gray border shadow-md w-11/12 mx-auto">
-                        <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
-                            <div class="flex-shrink-0">
-                                <img class="grayscale" src="img/kidsway.jpg" alt="">
-                            </div>
-                            <div class="py-8 md:pl-8">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">KIDSWAY</h3>
-                                <p class="mt-2 text-sm text-gray-500">Front-end Developer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 bg-light-gray border shadow-md w-11/12 mx-auto">
-                        <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
-                            <div class="flex-shrink-0">
-                                <img class="grayscale" src="img/homeshopping.jpg" alt="">
-                            </div>
-                            <div class="py-8 md:pl-8">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">HOMESHOPPING.PK</h3>
-                                <p class="mt-2 text-sm text-gray-500">Front-end Developer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 bg-light-gray border shadow-md w-11/12 mx-auto">
-                        <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
-                            <div class="flex-shrink-0">
-                                <img class="grayscale" src="img/blue-ex-logo.jpg" alt="">
-                            </div>
-                            <div class="py-8 md:pl-8">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">BLUE-EX</h3>
-                                <p class="mt-2 text-sm text-gray-500">PHP Developer</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 bg-light-gray border shadow-md w-11/12 mx-auto">
-                        <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
-                            <div class="flex-shrink-0">
-                                <img class="grayscale" src="img/fe-logo.jpg" alt="">
-                            </div>
-                            <div class="py-8 md:pl-8">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">FOSTER ENTITE</h3>
-                                <p class="mt-2 text-sm text-gray-500">PHP Developer</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="skills">
-            <div class="container py-3 mx-auto text-center">
-                <div class="row grid-cols-1 mx-auto">
-                    <div class="col-span-1 text-center text-white">
-                        <h1 class="mt-4">
-                            Skills
-                        </h1>
-                    </div>
-                    <div class="my-5 w-80 mx-auto text-white flex flex-wrap justify-center gap-1        ">
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            PhotoShop</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            Illustrator</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            Figma</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            AWS</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            Python</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            PHP</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            Wordpress</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            Shopify</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            C#</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            Html</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            CSS</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            SCSS</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            React</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            Angular</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            Git</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            Javascript</div>
-                        <div
-                            class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
-                            jQuery</div>
-                    </div>
-
-
-                </div>
-            </div>
-        </section>
-        <section id="education">
-            <div class="container py-3 pb-5 mx-auto">
-                <div class="text-center mt-4">
-                    <h1 class="text-2xl md:text-4xl">Education</h1>
-                </div>
-                <div class="mt-5 mx-auto">
-                    <div class="bg-light-gray border shadow-md">
-                        <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
-                            <div class="flex-shrink-0">
-                                <img src="img/uit-logo.jpg" alt="Usman Institute of Technology" />
-                            </div>
-                            <div class="py-8 md:pl-8">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Usman institute of Technology
-                                </h3>
-                                <p class="mt-2 text-sm text-gray-500">Bachelors in Computer Science <br> 2014 - 2018</p>
-                            </div>
+            </section>
+            <section id="about">
+                <div class="container mx-auto  px-[6vw]">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 align-item-center">
+                        <div class="flex flex-col justify-center text-left col-span-1 md:col-span-1 lg:col-span-3 p-5">
+                            <h1 class="mt-20 text-4xl font-bold">About</h1>
+                            <p class="mt-4 text-lg">
+                                I'm a Web Craftsman with 5+ years of experience in designing and coding custom websites from
+                                scratch. Possessing considerable knowledge of HTML5 / CSS3 / JavaScript / PHP / AWS /
+                                Shopify.
+                                Experienced in developing high-end web applications and keen coding skills, having the
+                                enthusiasm and ambition to complete projects to the highest standards.
+                            </p>
                         </div>
-                    </div>
-                    <div class="mt-4 bg-light-gray border shadow-md w-11/12 mx-auto">
-                        <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
-                            <div class="flex-shrink-0">
-                                <img class="grayscale" src="img/nazimabad-formen-logo.jpg" alt="">
-                            </div>
-                            <div class="py-8 md:pl-8">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">For Men Collage Nazimabad</h3>
-                                <p class="mt-2 text-sm text-gray-500">Pre Engineering <br> 2013 - 2014</p>
-                            </div>
+                        <div class="col-span-1 md:col-span-1 lg:col-span-2 md:mt-10 mt-20">
+                            <img src="img/Zain-ali.jpg" class="w-full h-auto" alt="Zain Ali">
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="portfolio">
-            <portfolio-component></portfolio-component>
-        </section>
-        <section id="contact" class="bg-white py-4 md:py-8">
-            <div class="container mx-auto">
-                <div class="flex justify-center items-center">
+            </section>
+            <section id="services">
+                <div class="container mx-auto py-[10vh] px-[6vw]">
+                    <h1 class="text-center text-4xl font-bold text-white mb-8">What can I do?</h1>
+                    <div class="my-12 mx-auto w-11/12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 ">
+                        <div class="text-center">
+                            <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
+                                <img src="./img/problem-solving.svg" alt="problem solving" class="w-12 h-12" />
+                            </div>
+                            <p class="text-white">Problem <br /> Solving</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
+                                <img src="./img/brand-design.svg" alt="brand design" class="w-12 h-12" />
+                            </div>
+                            <p class="text-white">Brand <br /> Design</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
+                                <img src="./img/ui-ux-design.svg" alt="ui-ux design" class="w-12 h-12" />
+                            </div>
+                            <p class="text-white">UI/UX <br /> Design</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="rounded-full bg-white mx-auto w-24 h-24 flex items-center justify-center mb-4">
+                                <img src="./img/website-development.svg" alt="website development" class="w-12 h-12" />
+                            </div>
+                            <p class="text-white">Website <br />Development</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="experience" class="py-[10vh]">
+                <div class="container py-3 pb-5 mx-auto">
                     <div class="text-center mt-4">
-                        <h1 class="mt-2 text-2xl md:text-4xl font-bold text-white">
-                            Contact
-                        </h1>
+                        <h1 class="text-2xl md:text-4xl">Experience</h1>
+                    </div>
+                    <div class="my-8 mx-auto w-11/12">
+                        <div class="bg-light-gray border shadow-md w-90 mx-2">
+                            <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
+                                <div class="flex-shrink-0">
+                                    <img src="img/bevy.jpeg" alt="Bevy Commerce" />
+                                </div>
+                                <div class="py-8 md:pl-8">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">Bevy commerce</h3>
+                                    <p class="mt-2 text-sm text-gray-500">Full Stack Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-light-gray border shadow-md w-11/12 mx-auto opacity-60">
+                            <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
+                                <div class="flex-shrink-0">
+                                    <img class="grayscale" src="img/kidsway.jpg" alt="Kidsway">
+                                </div>
+                                <div class="py-8 md:pl-8">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">KIDSWAY</h3>
+                                    <p class="mt-2 text-sm text-gray-500">Senior Frontend Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-light-gray border shadow-md w-11/12 mx-auto opacity-60">
+                            <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
+                                <div class="flex-shrink-0">
+                                    <img class="grayscale" src="img/homeshopping.jpg" alt="homeshopping">
+                                </div>
+                                <div class="py-8 md:pl-8">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">HOMESHOPPING.PK</h3>
+                                    <p class="mt-2 text-sm text-gray-500">Front-end Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-light-gray border shadow-md w-11/12 mx-auto opacity-60">
+                            <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
+                                <div class="flex-shrink-0">
+                                    <img class="grayscale" src="img/blue-ex-logo.jpg" alt="blue-ex">
+                                </div>
+                                <div class="py-8 md:pl-8">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">BLUE-EX</h3>
+                                    <p class="mt-2 text-sm text-gray-500">PHP Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-light-gray border shadow-md w-11/12 mx-auto opacity-60">
+                            <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
+                                <div class="flex-shrink-0">
+                                    <img class="grayscale" src="img/fe-logo.jpg" alt="FOSTER ENTITE">
+                                </div>
+                                <div class="py-8 md:pl-8">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">FOSTER ENTITE</h3>
+                                    <p class="mt-2 text-sm text-gray-500">PHP Developer</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
+            </section>
+            <section id="skills" class="py-[10vh] pb-[15vh] bg-primary">
+                <div class="container py-3 mx-auto text-center">
+                    <div class="row grid-cols-1 mx-auto">
+                        <div class="col-span-1 text-center text-white">
+                            <h1 class="mt-4">
+                                Skills
+                            </h1>
+                        </div>
+                        <div class="my-5 w-[40%] mx-auto text-white flex flex-wrap justify-center gap-3">
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                PhotoShop</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Illustrator</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Figma</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                AWS</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Python</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Django</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                PHP</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Laravel</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Wordpress</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Shopify</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                C#</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                HTML</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                CSS</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                SCSS</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                React</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Vue</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Nuxt</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Angular</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Git</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Javascript</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                GraphQl</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                Remix</div>
+                            <div
+                                class="border border-gray-300 rounded-md text-white cursor-pointer hover:bg-light-gray hover:text-gray-900 p-3">
+                                jQuery</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="education" class="py-[10vh]">
+                <div class="container py-3 pb-5 mx-auto">
+                    <div class="text-center mt-4">
+                        <h1 class="text-2xl md:text-4xl">Education</h1>
+                    </div>
+                    <div class="my-8 mx-auto w-11/12">
+                        <div class="bg-light-gray border shadow-md">
+                            <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
+                                <div class="flex-shrink-0">
+                                    <img src="img/uit-logo.jpg" alt="Usman Institute of Technology" />
+                                </div>
+                                <div class="py-8 md:pl-8">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">Usman institute of Technology
+                                    </h3>
+                                    <p class="mt-2 text-sm text-gray-500">Bachelors in Computer Science <br> 2014 - 2018</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-light-gray border shadow-md w-11/12 mx-auto opacity-60">
+                            <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
+                                <div class="flex-shrink-0">
+                                    <img class="grayscale" src="img/nazimabad-formen-logo.jpg" alt="">
+                                </div>
+                                <div class="py-8 md:pl-8">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900">For Men Collage Nazimabad</h3>
+                                    <p class="mt-2 text-sm text-gray-500">Pre Engineering <br> 2013 - 2014</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="portfolio" class="pt-[10vh] bg-light-gray">
+                <portfolio-component></portfolio-component>
+            </section>
+            <section id="contact" class="bg-tertiary py-[10vh]">
+                <div class="container mx-auto">
+                    <div class="flex justify-center items-center">
+                        <div class="text-center mt-4">
+                            <h1 class="mt-2 text-2xl md:text-4xl font-bold text-white">
+                                Contact
+                            </h1>
+                        </div>
+                    </div>
 
-                <div class="mt-12 max-w-lg mx-auto">
-                    <form action="https://formspree.io/zainali95@yahoo.com" method="POST" class="flex flex-col">
-                        <input type="text" placeholder="Name" name="name"
-                            class="px-3 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-indigo-500"
-                            required />
-                        <input type="email" placeholder="Email" name="_replyto"
-                            class="px-3 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-indigo-500"
-                            required />
-                        <textarea name="message" placeholder="Message" id="" cols="30" rows="10"
-                            class="mt-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-indigo-500"
-                            required></textarea>
-                        <button type="submit"
-                            class="mt-4 px-4 py-2 bg-indigo-500 text-white rounded-md shadow-md hover:bg-indigo-600">Send</button>
-                    </form>
+                    <div class="mt-12 max-w-lg mx-auto px-4">
+                        <form action="https://formspree.io/zainali95@yahoo.com" method="POST" class="flex flex-col">
+                            <input type="text" placeholder="Name" name="name"
+                                class="px-3 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-indigo-500"
+                                required />
+                            <input type="email" placeholder="Email" name="_replyto"
+                                class="px-3 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-indigo-500"
+                                required />
+                            <textarea name="message" placeholder="Message" id="" cols="30" rows="10"
+                                class="mt-2 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-indigo-500"
+                                required></textarea>
+                            <button type="submit"
+                                class="mt-4 px-4 py-2 bg-indigo-500 text-white rounded-md shadow-md hover:bg-indigo-600">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="flex flex-col">
+            <div class="first-footer w-full bg-primary">
+                <div class="w-80 mx-auto grid-cols-6 grid py-6 ">
+                    <a href="https://www.github.com/zainali95/">
+                        <img class="w-6 h-6" src="./img/github.svg" alt="github" />
+                    </a>
+                    <a href="https://www.fb.com/zainalidesigns/">
+                        <img class="w-6 h-6 " src="./img/facebook.svg" alt="facebook" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/zainali95/">
+                        <img class="w-6 h-6" src="./img/linkedin.svg" alt="linkedin">
+                    </a>
+                    <a href="https://www.behance.net/zainalidesigns">
+                        <img class="w-6 h-6" src="./img/behance.svg" alt="behance" />
+                    </a>
+                    <a href="https://stackoverflow.com/users/4198115/zain-ali">
+                        <img class="w-6 h-6" src="./img/stackoverflow.svg" alt="stack overflow" />
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=923473587116">
+                        <img class="w-6 h-6" src="./img/whatsapp.svg" alt="whatsapp" />
+                    </a>
                 </div>
             </div>
-        </section>
-    </main>
-    <footer class="flex flex-col">
-        <div class="first-footer w-full">
-            <div class="w-80 mx-auto grid-cols-6 grid py-6 ">
-                <a  href="https://www.github.com/zainali95/">
-                    <img class="w-6 h-6" src="./img/github.svg" alt="github" />
-                </a>
-                <a  href="https://www.fb.com/zainalidesigns/">
-                    <img class="w-6 h-6 " src="./img/facebook.svg" alt="facebook" />
-                </a>
-                <a  href="https://www.linkedin.com/in/zainali95/">
-                    <img class="w-6 h-6" src="./img/linkedin.svg" alt="linkedin">
-                </a>
-                <a  href="https://www.behance.net/zainalidesigns">
-                    <img class="w-6 h-6" src="./img/behance.svg" alt="behance" />
-                </a>
-                <a  href="https://stackoverflow.com/users/4198115/zain-ali">
-                    <img class="w-6 h-6" src="./img/stackoverflow.svg" alt="stack overflow" />
-                </a>
-                <a  href="https://api.whatsapp.com/send?phone=923473587116">
-                    <img class="w-6 h-6" src="./img/whatsapp.svg" alt="whatsapp" />
-                </a>
-            </div>
-        </div>
-        <div class="bg-gray-800 p-4 w-full m-0">
-            <div class="container mx-auto">
-                <div class="flex justify-center py-1 text-center">
-                    <p class="text-white">Made with ❤ from <a href="https://goo.gl/maps/m6Ectk7nseH2"
-                            class="text-white">karachi</a></p>
+            <div class="bg-gray-800 p-4 w-full m-0">
+                <div class="container mx-auto">
+                    <div class="flex justify-center py-1 text-center">
+                        <p class="text-white">Made with ❤ from <a href="https://goo.gl/maps/m6Ectk7nseH2"
+                                class="text-white">karachi</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-</body>
-<script src="js/script.js "></script>
+        </footer>
+    </body>
+    <script src="js/script.js "></script>
 </html>
