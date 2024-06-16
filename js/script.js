@@ -2,12 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById('hamburger');
     const navLink = document.querySelector('.nav-links');
     hamburger.addEventListener('click', () => {
-        navLink.classList.toggle('top-[-28px]');
+        navLink.classList.toggle('top-[-4px]');
         hamburger.classList.toggle('open');
     });
 
-    // Add 'active' class to the first .nav-link
-    document.querySelector(".nav-link").classList.add("active");
     // Handle scrolling event
     window.addEventListener('scroll', function () {
         var header = document.querySelector('header');
@@ -35,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 // Update the URL hash without jumping
-                history.pushState(null, null, `#${targetId}`);
+                history.pushState(null, null, `/#${targetId}`);
             }
         });
     });
@@ -125,11 +123,13 @@ class FiltersComponent extends HTMLElement {
 
                 const active = this.querySelector('filters-component .bg-primary');
                 if (active) {
-                    active.classList.toggle('bg-primary');
+                    active.classList.remove('bg-primary');
+                    active.classList.remove('text-white')
                     active.classList.toggle('text-primary');
                 }
-                event.target.classList.toggle('text-white');
-                event.target.classList.toggle('bg-primary');
+                event.target.classList.add('text-white')
+                event.target.classList.add('bg-primary');
+                event.target.classList.toggle('text-primary');
             });
         });
     }
@@ -175,3 +175,30 @@ class ProjectComponent extends HTMLElement {
     }
 }
 customElements.define('project-component', ProjectComponent);
+
+const scrollers = document.querySelectorAll(".scroller");
+
+// If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    // add data-animated="true" to every `.scroller` on the page
+    scroller.setAttribute("data-animated", true);
+
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".tag-list");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // For each item in the array, clone it
+    // add aria-hidden to it
+    // add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
